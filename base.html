@@ -1,5 +1,4 @@
   {% load static %}
-
   <!DOCTYPE html>
   <html lang="en">
   <head>
@@ -19,6 +18,7 @@
     <link href="{% static '/css/sequence.css' %}" rel="stylesheet">
     <link href="{% static '/css/style.css' %}" rel="stylesheet">
     <link href="{% static '/color/default.css' %}" rel="stylesheet">
+    <link href="{% static '/css/popup.css' %}" rel="stylesheet">
 
     <!-- fav and touch icons -->
     <link rel="shortcut icon" href="{% static '/ico/favicon.png' %}">
@@ -37,46 +37,46 @@
         <div class="navbar-inner">
           <div class="container">
             <!-- logo -->
-            <a class="brand logo" href="index.html"><img src="{% static '/img/logo.png' %}" alt=""></a>
+            <a class="brand logo" href="{% url 'home' %}"><img src="{% static '/img/logo.png' %}" alt=""></a>
             <!-- end logo -->
             <!-- top menu -->
             <div class="navigation">
               <nav>
                 <ul class="nav topnav">
                   <li class="dropdown active">
-                    <a href="index.html">Home</a>
+                    <a href="{% url 'home' %}">Home</a>
                   </li>
                   <li class="dropdown">
                     <a href="#">Academic Programs</a>
                     <ul class="dropdown-menu">
-                      <li><a href="bschemistry/">BS Chemistry</a></li>
-                      <li><a href="bschemical/">BS Chemical Engineering</a></li>
-                      <li><a href="mschemistry/">MS Chemistry</a></li>
-                      <li><a href="msbiomedical/">MS Biomedical Engineering</a></li>
-                      <li><a href="certificateprograms/">Certificate Programs</a></li>
+                      <li><a href="{% url 'bschemistry' %}">BS Chemistry</a></li>
+                      <li><a href="{% url 'bschemical' %}">BS Chemical Engineering</a></li>
+                      <li><a href="{% url 'mschemistry' %}">MS Chemistry</a></li>
+                      <li><a href="{% url 'msbiomedical' %}">MS Biomedical Engineering</a></li>
+                      <li><a href="{% url 'certificateprograms' %}">Certificate Programs</a></li>
                     </ul>
                   </li>
                   <li class="dropdown">
                     <a href="#">People</a>
                     <ul class="dropdown-menu">
-                      <li><a href="faculty/">Faculty</a></li>
-                      <li><a href="staff/">Staff</a></li>
-                      <li><a href="student/">Student</a></li>
+                      <li><a href="{% url 'faculty' %}">Faculty</a></li>
+                      <li><a href="{% url 'staff' %}">Staff</a></li>
+                      <li><a href="{% url 'student' %}">Student</a></li>
                     </ul>
                   </li>
                   <li class="dropdown">
                     <a href="#">Research</a>
                     <ul class="dropdown-menu">
-                      <li class="dropdown"><a href="404.html">By Areas</a>
+                      <li class="dropdown"><a href="{% url 'errorpage' %}">By Areas</a>
                         <ul class="dropdown-menu sub-menu">
-                          <li><a href="#">Chemistry</a></li>
+                          <li><a href="{% url 'research-area-chemistry' %}">Chemistry</a></li>
                           <li><a href="#">Chemical Engineering</a></li>
                           <li><a href="#">Biomedical Engineering</a></li>
                         </ul>
                       </li>
-                      <li class="dropdown"><a href="404.html">By Direction</a>
+                      <li class="dropdown"><a href="{% url 'research-direction-sustainability' %}">By Direction</a>
                         <ul class="dropdown-menu sub-menu">
-                          <li><a href="#">Sustainability Energy</a></li>
+                          <li><a href="{% url 'research-direction-sustainability' %}">Sustainability Energy</a></li>
                           <li><a href="#">Medical</a></li>
                         </ul>
                       </li>
@@ -85,23 +85,23 @@
                   <li class="dropdown">
                     <a href="#">Teaching Events</a>
                     <ul class="dropdown-menu">
-                      <li><a href="404.html">Course Announcements</a></li>
-                      <li><a href="404.html">Seminars</a></li>
+                      <li><a href="{% url 'seminars' %}">Course Announcements</a></li>
+                      <li><a href="{% url 'seminars' %}">Seminars</a></li>
                     </ul>
                   </li>
                   <li class="dropdown">
                     <a href="#">Resources</a>
                     <ul class="dropdown-menu">
-                      <li><a href="404.html">Lab Facility</a></li>
-                      <li><a href="404.html">Computing</a></li>
-                      <li><a href="404.html">Student Services</a></li>
+                      <li><a href="{% url 'labfacility' %}">Lab Facility</a></li>
+                      <li><a href="{% url 'errorpage' %}">Computing</a></li>
+                      <li><a href="{% url 'errorpage' %}">Student Services</a></li>
                     </ul>
                   </li>
                   <li>
-                    <a href="404.html">News</a>
+                    <a href="{% url 'errorpage' %}">News</a>
                   </li>
                   <li>
-                    <a href="contact.html">About & Contact</a>
+                    <a href="{% url 'contactpage' %}">About & Contact</a>
                   </li>
                 </ul>
               </nav>
@@ -153,7 +153,7 @@
           <div class="span4">
             <div class="widget">
               <!-- logo -->
-              <a class="brand logo" href="index.html">
+              <a class="brand logo" href="{% url 'home' %}">
                               <img src="{% static 'img/University_of_New_Haven_logo.png' %}" alt="" style="width: 130px; height: 110px;">
                           </a>
               <!-- end logo -->
@@ -166,7 +166,7 @@
             </div>
             <div>
               <h5>Admin Login</h5>
-              <button class="adminbutton" style="vertical-align:middle"><span><a href="login.html" target="_blank">Login</a></span>
+              <button class="adminbutton" style="vertical-align:middle"><span><a href="{% url 'adminlogin' %}" target="_blank">Login</a></span>
               </button>
             </div>
           </div>
@@ -206,6 +206,6 @@
     <script src="{%static '/js/hover/setting.js' %}"></script>
     <!-- Template Custom JavaScript File -->
     <script src="{% static '/js/custom.js' %}"></script>
-
+    <script src="{% static '/js/popup.js' %}"></script>
   </body>
   </html>
