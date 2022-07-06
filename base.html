@@ -85,7 +85,7 @@
                   <li class="dropdown">
                     <a href="#">Teaching Events</a>
                     <ul class="dropdown-menu">
-                      <li><a href="{% url 'seminars' %}">Course Announcements</a></li>
+                      <li><a href="{% url 'announcement' %}">Course Announcements</a></li>
                       <li><a href="{% url 'seminars' %}">Seminars</a></li>
                     </ul>
                   </li>
@@ -93,12 +93,12 @@
                     <a href="#">Resources</a>
                     <ul class="dropdown-menu">
                       <li><a href="{% url 'labfacility' %}">Lab Facility</a></li>
-                      <li><a href="{% url 'errorpage' %}">Computing</a></li>
+                      <li><a href="{% url 'computing' %}">Computing</a></li>
                       <li><a href="{% url 'errorpage' %}">Student Services</a></li>
                     </ul>
                   </li>
                   <li>
-                    <a href="{% url 'errorpage' %}">News</a>
+                    <a href="{% url 'news' %}">News</a>
                   </li>
                   <li>
                     <a href="{% url 'contactpage' %}">About & Contact</a>
@@ -165,8 +165,7 @@
                           </address>
             </div>
             <div>
-              <h5>Admin Login</h5>
-              <button class="adminbutton" style="vertical-align:middle"><span><a href="{% url 'adminlogin' %}" target="_blank">Login</a></span>
+              <button class="btn btn-mini" style="vertical-align:middle"><span><a href="{% url 'adminlogin' %}" target="_blank">Admin Login</a></span>
               </button>
             </div>
           </div>
@@ -206,6 +205,5 @@
     <script src="{%static '/js/hover/setting.js' %}"></script>
     <!-- Template Custom JavaScript File -->
     <script src="{% static '/js/custom.js' %}"></script>
-    <script src="{% static '/js/popup.js' %}"></script>
   </body>
   </html>
